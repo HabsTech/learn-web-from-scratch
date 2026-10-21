@@ -1,0 +1,335 @@
+
+/* =========================
+   RESET DAN DASAR
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #344054;
+    min-height: 100vh;
+    padding: 18px;
+}
+
+/* =========================
+   CONTAINER UTAMA
+========================= */
+
+.login-container {
+    width: 100%;
+    min-height: calc(100vh - 36px);
+    background-color: #edf2f8;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+
+    min-height: 115px;
+    padding: 24px;
+
+    background-color: #192d4d;
+    color: #ffffff;
+}
+
+.header-icon {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #344968;
+    border-radius: 15px;
+}
+
+.header-icon svg {
+    width: 31px;
+    height: 31px;
+}
+
+.header-text h1 {
+    font-size: 21px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.header-text p {
+    color: #cbd5e1;
+    font-size: 16px;
+    line-height: 1.4;
+}
+
+/* =========================
+   AREA KONTEN
+========================= */
+
+.main-content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 26px 20px;
+    min-height: 499px;
+}
+
+/* =========================
+   CARD LOGIN
+========================= */
+
+.login-card {
+    width: 100%;
+    max-width: 450px;
+
+    background-color: #ffffff;
+    border: 1px solid #e0e5eb;
+    border-radius: 20px;
+
+    padding: 30px 25px 25px;
+}
+
+/* =========================
+   JUDUL LOGIN
+========================= */
+
+.login-heading {
+    text-align: center;
+    margin-bottom: 19px;
+}
+
+.login-heading h2 {
+    color: #203451;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 9px;
+}
+
+.login-heading p {
+    color: #7a8595;
+    font-size: 16px;
+}
+
+/* =========================
+   PESAN ERROR
+========================= */
+
+.error-message {
+    background-color: #fef2f2;
+    color: #b42318;
+    border: 1px solid #fecaca;
+    border-radius: 8px;
+
+    padding: 11px 12px;
+    margin-bottom: 18px;
+
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+/* =========================
+   FORM DAN INPUT
+========================= */
+
+.form-group {
+    margin-bottom: 19px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 7px;
+
+    font-size: 16px;
+    font-weight: 600;
+    color: #3d4756;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    width: 100%;
+    height: 65px;
+
+    padding: 0 15px;
+
+    border: 1px solid #cbd2da;
+    border-radius: 11px;
+    background-color: #ffffff;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.input-wrapper:focus-within {
+    border-color: #2864e8;
+    box-shadow: 0 0 0 3px rgb(40 100 232 / 12%);
+}
+
+.input-icon {
+    width: 19px;
+    height: 19px;
+    flex-shrink: 0;
+
+    color: #718096;
+}
+
+.input-wrapper input {
+    width: 100%;
+    min-width: 0;
+    height: 100%;
+
+    border: none;
+    outline: none;
+    background: transparent;
+
+    font-family: inherit;
+    font-size: 16px;
+    color: #344054;
+}
+
+.input-wrapper input::placeholder {
+    color: #98a2b3;
+    opacity: 1;
+}
+
+/* =========================
+   TOMBOL LOGIN
+========================= */
+
+.login-button {
+    width: 100%;
+    min-height: 63px;
+
+    border: none;
+    border-radius: 11px;
+
+    background-color: #2864e8;
+    color: #ffffff;
+
+    font-family: inherit;
+    font-size: 18px;
+    font-weight: 700;
+
+    cursor: pointer;
+    transition:
+        background-color 0.2s ease,
+        transform 0.1s ease;
+}
+
+.login-button:hover {
+    background-color: #1d52ca;
+}
+
+.login-button:active {
+    transform: scale(0.99);
+}
+
+.login-button:focus-visible {
+    outline: 3px solid #93b4ff;
+    outline-offset: 3px;
+}
+
+/* =========================
+   FOOTER CARD
+========================= */
+
+.card-footer {
+    text-align: center;
+    color: #7a8595;
+    font-size: 14px;
+
+    margin-top: 18px;
+}
+
+/* =========================
+   RESPONSIVE UNTUK HP
+========================= */
+
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+
+    .login-container {
+        min-height: calc(100vh - 20px);
+        border-radius: 15px;
+    }
+
+    .header {
+        min-height: 95px;
+        padding: 18px 15px;
+        gap: 12px;
+    }
+
+    .header-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+    }
+
+    .header-icon svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .header-text h1 {
+        font-size: 16px;
+        margin-bottom: 7px;
+    }
+
+    .header-text p {
+        font-size: 12px;
+    }
+
+    .main-content {
+        padding: 25px 14px;
+        min-height: auto;
+    }
+
+    .login-card {
+        padding: 26px 20px 23px;
+        border-radius: 16px;
+    }
+
+    .login-heading h2 {
+        font-size: 22px;
+    }
+
+    .login-heading p {
+        font-size: 14px;
+    }
+
+    .input-wrapper {
+        height: 56px;
+    }
+
+    .form-group label {
+        font-size: 14px;
+    }
+
+    .input-wrapper input {
+        font-size: 14px;
+    }
+
+    .login-button {
+        min-height: 56px;
+        font-size: 16px;
+    }
+}

@@ -1,0 +1,625 @@
+
+/* =========================
+   DASAR DASHBOARD ADMIN
+========================= */
+
+body {
+    padding: 14px;
+    color: #344054;
+    background-color: #ffffff;
+}
+
+.admin-container {
+    width: 100%;
+    min-height: calc(100vh - 28px);
+
+    border: 1px solid #dce3ec;
+    border-radius: 22px;
+    overflow: hidden;
+
+    background-color: #edf2f8;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+.admin-header {
+    min-height: 144px;
+    padding: 24px 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+
+    background-color: #192d4d;
+    color: #ffffff;
+}
+
+.admin-brand {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    min-width: 0;
+}
+
+.brand-icon {
+    width: 90px;
+    height: 90px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 20px;
+    background-color: #344968;
+}
+
+.brand-icon svg {
+    width: 44px;
+    height: 44px;
+}
+
+.brand-text h1 {
+    margin-bottom: 12px;
+
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+}
+
+.brand-text p {
+    color: #d1dbea;
+    font-size: 22px;
+}
+
+.notification-button {
+    position: relative;
+
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+    border-radius: 12px;
+    background: transparent;
+    color: #ffffff;
+
+    cursor: pointer;
+}
+
+.notification-button:hover {
+    background-color: rgb(255 255 255 / 10%);
+}
+
+.notification-button svg {
+    width: 30px;
+    height: 30px;
+}
+
+.notification-dot {
+    position: absolute;
+    top: 7px;
+    right: 6px;
+
+    width: 8px;
+    height: 8px;
+
+    background-color: #8ab4ff;
+    border: 1px solid #192d4d;
+    border-radius: 50%;
+}
+
+/* =========================
+   LAYOUT DAN SIDEBAR
+========================= */
+
+.admin-layout {
+    display: grid;
+    grid-template-columns: 32% minmax(0, 1fr);
+    min-height: calc(100vh - 172px);
+}
+
+.admin-sidebar {
+    padding: 18px;
+    background-color: #ffffff;
+    border-right: 1px solid #e4e9f0;
+}
+
+.sidebar-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nav-link {
+    min-height: 76px;
+    padding: 16px 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    border-radius: 17px;
+    text-decoration: none;
+
+    color: #526078;
+    font-size: 21px;
+    font-weight: 400;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.nav-link > svg {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+.nav-link:hover {
+    background-color: #f1f5fb;
+    color: #2864e8;
+}
+
+.nav-link.active {
+    background-color: #eaf1ff;
+    color: #2864e8;
+    font-weight: 600;
+}
+
+.sidebar-divider {
+    height: 1px;
+    background-color: #e0e5ec;
+    margin: 20px 0 14px;
+}
+
+.nav-link.logout-link {
+    color: #dc2626;
+}
+
+.nav-link.logout-link:hover {
+    background-color: #fef2f2;
+}
+
+/* =========================
+   KONTEN UTAMA
+========================= */
+
+.admin-main {
+    min-width: 0;
+    padding: 30px;
+}
+
+.welcome-section {
+    margin-bottom: 24px;
+}
+
+.welcome-section h2 {
+    margin-bottom: 14px;
+
+    color: #203451;
+    font-size: 34px;
+    line-height: 1.2;
+    font-weight: 700;
+}
+
+.welcome-section p {
+    color: #728096;
+    font-size: 21px;
+    line-height: 1.5;
+}
+
+/* =========================
+   KARTU RINGKASAN
+========================= */
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+
+    margin-bottom: 24px;
+}
+
+.summary-card {
+    min-width: 0;
+    min-height: 230px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    padding: 22px 30px;
+
+    background-color: #ffffff;
+    border: 1px solid #f0f2f6;
+    border-radius: 22px;
+}
+
+.summary-icon {
+    width: 84px;
+    height: 84px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: #eaf1ff;
+    border-radius: 20px;
+
+    color: #2864e8;
+}
+
+.summary-icon svg {
+    width: 44px;
+    height: 44px;
+}
+
+.summary-card h3 {
+    margin-top: 12px;
+
+    color: #526078;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.summary-value {
+    margin-top: auto;
+    padding-top: 12px;
+
+    color: #203451;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+/* =========================
+   MENU ADMIN
+========================= */
+
+.admin-menu-card {
+    padding: 30px;
+
+    background-color: #ffffff;
+    border: 1px solid #f0f2f6;
+    border-radius: 22px;
+}
+
+.menu-heading {
+    margin-bottom: 22px;
+}
+
+.menu-heading h2 {
+    margin-bottom: 8px;
+
+    color: #203451;
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.menu-heading p {
+    color: #728096;
+    font-size: 19px;
+    line-height: 1.5;
+}
+
+.menu-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.menu-item {
+    min-height: 96px;
+    padding: 18px 4px;
+
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    text-decoration: none;
+    color: #203451;
+
+    border-bottom: 1px solid #e0e5ec;
+
+    transition: color 0.2s ease;
+}
+
+.menu-item:last-child {
+    border-bottom: none;
+}
+
+.menu-item:hover {
+    color: #2864e8;
+}
+
+.menu-item-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #2864e8;
+    flex-shrink: 0;
+}
+
+.menu-item-icon svg {
+    width: 38px;
+    height: 38px;
+}
+
+.menu-item-text {
+    flex: 1;
+    font-size: 21px;
+    line-height: 1.4;
+}
+
+.menu-chevron {
+    width: 26px;
+    height: 26px;
+    flex-shrink: 0;
+    color: #8090a5;
+}
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+
+@media (max-width: 1100px) {
+    .admin-layout {
+        grid-template-columns: 250px minmax(0, 1fr);
+    }
+
+    .admin-header {
+        min-height: 120px;
+    }
+
+    .admin-brand {
+        gap: 18px;
+    }
+
+    .brand-icon {
+        width: 70px;
+        height: 70px;
+    }
+
+    .brand-text h1 {
+        font-size: 24px;
+    }
+
+    .brand-text p {
+        font-size: 17px;
+    }
+
+    .admin-sidebar {
+        padding: 14px;
+    }
+
+    .nav-link {
+        min-height: 62px;
+        padding: 13px;
+        gap: 14px;
+        font-size: 16px;
+    }
+
+    .nav-link > svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .admin-main {
+        padding: 24px;
+    }
+
+    .welcome-section h2 {
+        font-size: 29px;
+    }
+
+    .welcome-section p {
+        font-size: 17px;
+    }
+
+    .summary-card {
+        padding: 20px;
+        min-height: 205px;
+    }
+
+    .summary-card h3 {
+        font-size: 17px;
+    }
+
+    .admin-menu-card {
+        padding: 24px;
+    }
+
+    .menu-item-text {
+        font-size: 17px;
+    }
+}
+
+/* =========================
+   RESPONSIVE HP
+========================= */
+
+@media (max-width: 700px) {
+    body {
+        padding: 8px;
+    }
+
+    .admin-container {
+        min-height: calc(100vh - 16px);
+        border-radius: 15px;
+    }
+
+    .admin-header {
+        min-height: 90px;
+        padding: 16px;
+        gap: 10px;
+    }
+
+    .admin-brand {
+        gap: 12px;
+    }
+
+    .brand-icon {
+        width: 48px;
+        height: 48px;
+        border-radius: 12px;
+    }
+
+    .brand-icon svg {
+        width: 27px;
+        height: 27px;
+    }
+
+    .brand-text h1 {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+
+    .brand-text p {
+        font-size: 12px;
+    }
+
+    .notification-button {
+        width: 36px;
+        height: 36px;
+    }
+
+    .notification-button svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .admin-layout {
+        display: flex;
+        flex-direction: column;
+        min-height: auto;
+    }
+
+    .admin-sidebar {
+        padding: 10px;
+        border-right: none;
+        border-bottom: 1px solid #e4e9f0;
+    }
+
+    .sidebar-nav {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 6px;
+    }
+
+    .nav-link {
+        min-height: 48px;
+        padding: 9px;
+        gap: 8px;
+        border-radius: 10px;
+        font-size: 12px;
+    }
+
+    .nav-link > svg {
+        width: 20px;
+        height: 20px;
+    }
+
+    .sidebar-divider {
+        grid-column: 1 / -1;
+        margin: 5px 0;
+    }
+
+    .nav-link.logout-link {
+        grid-column: 1 / -1;
+    }
+
+    .admin-main {
+        padding: 18px 12px;
+    }
+
+    .welcome-section {
+        margin-bottom: 18px;
+    }
+
+    .welcome-section h2 {
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    .welcome-section p {
+        font-size: 14px;
+    }
+
+    .summary-grid {
+        gap: 10px;
+        margin-bottom: 16px;
+    }
+
+    .summary-card {
+        min-height: 155px;
+        padding: 14px;
+        border-radius: 14px;
+    }
+
+    .summary-icon {
+        width: 46px;
+        height: 46px;
+        border-radius: 12px;
+    }
+
+    .summary-icon svg {
+        width: 26px;
+        height: 26px;
+    }
+
+    .summary-card h3 {
+        margin-top: 10px;
+        font-size: 13px;
+    }
+
+    .summary-value {
+        font-size: 20px;
+    }
+
+    .admin-menu-card {
+        padding: 18px 14px;
+        border-radius: 15px;
+    }
+
+    .menu-heading {
+        margin-bottom: 12px;
+    }
+
+    .menu-heading h2 {
+        font-size: 21px;
+    }
+
+    .menu-heading p {
+        font-size: 13px;
+    }
+
+    .menu-item {
+        min-height: 70px;
+        gap: 12px;
+        padding: 14px 2px;
+    }
+
+    .menu-item-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+
+    .menu-item-text {
+        font-size: 14px;
+    }
+
+    .menu-chevron {
+        width: 20px;
+        height: 20px;
+    }
+}
