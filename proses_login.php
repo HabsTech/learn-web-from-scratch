@@ -28,7 +28,7 @@ $stmt->execute(['no_telp' => $no_telp]);
 
 $user = $stmt->fetch();
 
-// Verifikasi akun dan password
+// Verifikasi akun dan password user
 if (!$user || !password_verify($password, $user['password'])) {
     header('Location: login.php?error=invalid');
     exit;
