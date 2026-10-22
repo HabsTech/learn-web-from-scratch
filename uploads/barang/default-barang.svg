@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="160" height="120" viewBox="0 0 160 120">
+  <rect width="160" height="120" rx="12" fill="#f0f4fa"/>
+  <g fill="none" stroke="#8b9bb1" stroke-width="3" stroke-linejoin="round">
+    <path d="M44 43 80 24l36 19-36 20z"/>
+    <path d="M44 43v37l36 19 36-19V43"/>
+    <path d="M80 62v37"/>
+    <path d="m62 34 36 20"/>
+  </g>
+  <text x="80" y="112" text-anchor="middle" font-family="Arial,sans-serif" font-size="10" fill="#728096">Tidak ada gambar</text>
+</svg>
