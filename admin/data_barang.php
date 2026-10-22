@@ -231,10 +231,10 @@ $totalBarang = count($barangList);
                     <p>Kelola informasi detail setiap barang dalam inventaris gudang.</p>
                 </div>
 
-                <a href="tambah_barang.php" class="add-button">
+                <button type="button" class="add-button" id="openAddBarang">
                     <span aria-hidden="true">＋</span>
                     Tambah Barang
-                </a>
+                </button>
             </section>
 
             <!-- PENCARIAN DAN FILTER -->
@@ -408,6 +408,147 @@ $totalBarang = count($barangList);
         </main>
     </div>
 </div>
+
+<!-- MODAL TAMBAH BARANG -->
+<div class="modal-overlay" id="addBarangModal"
+     aria-hidden="true">
+    <section class="add-item-modal"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="modalBarangTitle">
+
+        <div class="modal-header">
+            <div>
+                <h2 id="modalBarangTitle">Tambah Barang</h2>
+                <p>Lengkapi informasi barang inventaris gudang.</p>
+            </div>
+
+            <button type="button" class="modal-close"
+                    id="closeAddBarang" aria-label="Tutup">
+                &times;
+            </button>
+        </div>
+
+        <form class="add-item-form"
+              action="proses_tambah_barang.php"
+              method="POST"
+              enctype="multipart/form-data">
+
+            <div class="add-item-grid">
+                <div class="add-item-field full-width">
+                    <label for="gambar">Gambar Barang (opsional)</label>
+                    <input type="file" id="gambar" name="gambar"
+                           accept="image/jpeg,image/png,image/webp,image/gif">
+                    <p class="modal-hint">
+                        JPG, PNG, WEBP, atau GIF. Maksimum 3 MB.
+                        Jika kosong, gambar default akan digunakan.
+                    </p>
+                </div>
+
+                <div class="add-item-field full-width">
+                    <label for="nama_barang">Nama Barang *</label>
+                    <input type="text" id="nama_barang"
+                           name="nama_barang" maxlength="150" required>
+                </div>
+
+                <div class="add-item-field">
+                    <label for="jenis_barang">Jenis Barang *</label>
+                    <input type="text" id="jenis_barang"
+                           name="jenis_barang" maxlength="100" required>
+                </div>
+
+                <div class="add-item-field">
+                    <label for="brand">Brand *</label>
+                    <input type="text" id="brand" name="brand"
+                           maxlength="100" required>
+                </div>
+
+                <div class="add-item-field">
+                    <label for="nomor_seri">Nomor Seri</label>
+                    <input type="text" id="nomor_seri" name="nomor_seri"
+                           maxlength="100">
+                </div>
+
+                <div class="add-item-field">
+                    <label for="stok">Stok *</label>
+                    <input type="number" id="stok" name="stok"
+                           min="0" step="1" required>
+                </div>
+
+                <div class="add-item-field">
+                    <label for="satuan">Satuan</label>
+                    <select id="satuan" name="satuan">
+                        <option value="unit">Unit</option>
+                        <option value="pcs">Pcs</option>
+                        <option value="buah">Buah</option>
+                        <option value="set">Set</option>
+                        <option value="meter">Meter</option>
+                        <option value="roll">Roll</option>
+                    </select>
+                </div>
+
+                <div class="add-item-field">
+                    <label for="tanggal_masuk">Tanggal Masuk *</label>
+                    <input type="date" id="tanggal_masuk"
+                           name="tanggal_masuk" required>
+                </div>
+
+                <div class="add-item-field full-width">
+                    <label for="lokasi">Lokasi *</label>
+                    <input type="text" id="lokasi" name="lokasi"
+                           maxlength="100" required>
+                </div>
+            </div>
+
+            <div class="modal-actions">
+                <button type="button" class="modal-cancel"
+                        id="cancelAddBarang">Batal</button>
+                <button type="submit" class="modal-save">Save</button>
+            </div>
+        </form>
+    </section>
+</div>
+
+<script>
+(() => {
+    const modal = document.getElementById('addBarangModal');
+    const openButton = document.getElementById('openAddBarang');
+    const closeButton = document.getElementById('closeAddBarang');
+    const cancelButton = document.getElementById('cancelAddBarang');
+
+    function openModal() {
+        modal.classList.add('is-open');
+        modal.setAttribute('aria-hidden', 'false');
+        document.getElementById('nama_barang').focus();
+    }
+
+    function closeModal() {
+        modal.classList.remove('is-open');
+        modal.setAttribute('aria-hidden', 'true');
+        openButton.focus();
+    }
+
+    openButton.addEventListener('click', openModal);
+    closeButton.addEventListener('click', closeModal);
+    cancelButton.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', function (event) {
+        if (event.target === modal) closeModal();
+    });
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && modal.classList.contains('is-open')) {
+            closeModal();
+        }
+    });
+
+    // Buka kembali modal jika server mengembalikan error validasi.
+    const params = new URLSearchParams(window.location.search);
+    if (params.has('status') && params.get('status') !== 'berhasil') {
+        openModal();
+    }
+})();
+</script>
 
 </body>
 </html>
